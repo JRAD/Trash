@@ -7,10 +7,27 @@ import java.util.Hashtable;
 public class Main {
 
     public static void main(String[] args) {
-
-
+        boolean results = IsUnique("tiger`");
+        System.out.print(results);
     }
 
+    /*
+     * returns true if all letters are unique in input
+     */
+    public static boolean IsUnique(String input)
+    {
+        HashMap charmap = new HashMap();
+        for (int i = 0; i < input.length(); i++)
+        {
+            charmap.putIfAbsent(input.charAt(i),i);
+        }
+
+        return charmap.size() == input.length();
+    }
+
+    /*
+     * returns the count of pairs that are k apart
+     */
     public void KDifference()
     {
         int [] sample = {1,7,5,9,2,12,3};
